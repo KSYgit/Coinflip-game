@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="coinstyle.css">
+    <title>Coin Flip Game</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Coin Flip Game</h1>
+        
+        <div id="game">
+            <h2>Game Controls</h2>
+            <label for="bet-size">Bet Size:</label>
+            <br>
+            <div class="bet-control">
+                <input type="number" id="bet-size" min="1" value="1">
+                <button id="half-bet" onclick="adjustBet('half')">1/2</button>
+                <button id="double-bet" onclick="adjustBet('double')">2x</button>
+            </div>
+            <button id="place-bet" onclick="placeBet()">Place Bet</button>
+            <div id="bet-selection" style="display: none;">
+                <p>Select Heads or Tails:</p>
+                <div class="buttons">
+                    <button id="heads" onclick="selectOutcome('heads')">Heads</button>
+                    <button id="tails" onclick="selectOutcome('tails')">Tails</button>
+                </div>
+                <button id="cash-out" onclick="cashOut()">Cash Out</button>
+            </div>
+        </div>
+
+        <div id="coin">
+            <div class="side-a"></div>
+            <div class="side-b"></div>
+        </div>
+
+        <div id="result">
+            <h2>Game Result</h2>
+            <p>Balance: $<span id="balance">100</span></p>
+            <p>Status: <span id="status" class="status-message">Ready to place bet</span></p>
+            <p>Current multiplier: <span id="multi">0</span></p>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="coingame.js"></script>
+</body>
+</html>
